@@ -1,40 +1,44 @@
 
 
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:quiz_app_application/screens/question_screen.dart';
 
-class CategoryCard extends StatelessWidget{
+class CategoryCard extends StatelessWidget {
   final String quizName;
   final Color quizColor;
-  const CategoryCard({
+  CategoryCard({
     required this.quizName,
     required this.quizColor,
-    super.key});
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(child:InkWell( onTap: () => Navigator.push(context, MaterialPageRoute<void>(
-      builder: (BuildContext context) => QuestionScreen (),
-    ),
-  ),
-
-      child: Container(
-        color: quizColor,
-        child: Center(child:Text(quizName,style: TextStyle(fontSize: 30,fontWeight: FontWeight.w700),))
+    return Expanded(
+      child: InkWell(
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute<void>(
+            builder: (BuildContext context) => QuestionsScreen(),
+          ),
         ),
-    ) 
-      );
-
-
-
-
+        child: Container(
+          color: quizColor,
+          child: Center(
+              child: Text(
+            quizName,
+            style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
+          )),
+        ),
+      ),
+    );
   }
-
-
-
-
 }
+
+
+
 
 
 
